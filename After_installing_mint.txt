@@ -1,0 +1,57 @@
+
+***************************************************************************
+Things to do when you install a new Linux Mint
+***************************************************************************
+
+1. Installing chrome – by downloading the Debian package on its website.
+
+2. Installing git on the system.
+
+3. Changing the bashrc file for alaises – 
+
+   alias ll='ls -a'
+   alias gellmann='ssh punit2@gellmann.scs.uiuc.edu'
+
+4. Installing fortran and g++ compilers:
+
+5. Changing terminal colour – by going to profiles
+
+6. Updating the system – sudo apt-get update then sudo apt-get upgrade
+
+7. Install TexLive and TexMaker from here:
+
+    https://community.linuxmint.com/software/view/texlive-full
+    https://community.linuxmint.com/software/view/texmaker
+    
+8. Install AdobeReader – the same folder containg this document has the deb file and a pdf file on how to install it 
+
+9. Install qpdfview using the commands below:
+
+	sudo add-apt-repository ppa:b-eltzner/qpdfview
+	sudo apt-get update
+	sudo apt-get install qpdfview
+
+10. Install vlc media player
+ can be done from the Synaptic package manager
+
+11. For the browsers change the settings to open from last time. Also in firefox always ask me where to save files
+
+12.Create a .vimrc in your user directory and add the following lines to it :
+
+   set number
+   set splitright
+   nnoremap <C-J> <C-W><C-J>
+   nnoremap <C-K> <C-W><C-K>
+   nnoremap <C-L> <C-W><C-L>
+   nnoremap <C-H> <C-W><C-H>
+   "to toggel between relativenumber and number use :set rnu and :set nornu respectively"
+   set autowrite
+   set cindent
+
+
+13. Install the flash plugin form the Synaptic package manager
+
+14. Install python – anaconda
+
+15. Install – MPI for parallel programming
+
