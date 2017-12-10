@@ -1,0 +1,145 @@
+
+
+****************************************************
+How to install Armadillo on Bluewaters
+****************************************************
+
+1. Go to the Git and download the Armadillo package, say into your Download folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************************************************
+How to install Armadillo on Campus Clusters
+****************************************************
+
+
+1. Go to the Git and download the Armadillo package, say into your Download folder.
+
+
+2. Open your terminal and go to the Download Folder --  
+   
+                  cd Download.
+
+3.  Copy the tar.xz file to your campus clusters account using the scp command. This is how I copied
+   
+                  scp -r armadillo-8.300.1.tar.xz punit2@cc-login.campuscluster.illinois.edu:/home/punit
+
+4. Now login to your campus cluster account 
+
+	          ssh -YC punit2@cc-login.campuscluster.illinois.edu
+
+5. Unpack the tar file from the terminal there using 
+
+		   tar -xf armadillo-8.300.1.tar.xz
+
+6. Now load the following modules :
+
+		     module load vim
+		     module load gcc/7.2.0
+		     module load cmake/3.6.2
+		     module load blas
+		     module load lapack
+
+
+7. Now 	cd armadillo-8.300.1.tar.xz
+
+8. Execute these commands in order:
+
+
+		cmake .    (Please notice the dot after cmake)
+		make
+		make install DESTDIR= home/lib		     
+
+The last command creates the armadillo copies/installs the armadillo headers/libraries in your home/  	lib directory.
+
+
+
+9.  Now come out of the folder  and go to the folder where you have the initial.cpp file.
+
+10. Execute 
+              module load intel/17.0
+              
+11. Execute
+ 	     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib/usr/lib64
+
+The above command will add the folder lib where you installed the armadillo library to the path of the compiler. HOWEVER THIS IS VALID FOR ONE SESSION ONLY. Step 12 expalains how to avoid this export commond everytime you log into the campus cluster.
+		
+12. Done !!!   Compile the initial.cpp with the following command.
+
+      g++ initial.cpp -I ~/libs2/usr/include -L ~/libs2/usr/lib64/ -larmadillo
+
+ You can even run the executable now :   ./a.out
+
+13. Since we may want to compile the program everytime you log in add the following to your .bashrc file
+
+
+                        vim ~/.bashrc
+
+Go to the last line and add :  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib/usr/libs64
+
+Notice again that the last ~/lib/usr is the path to your folder where you installed armadillo
+
+
+**************************************************************************************
+REMEMBER EVERYTIME YOU LOG INTO CAMPUS CLUSTER LOAD THE FOLLOWING MODULES
+TO BE ABLE TO RUN THE EXECUTABLE/COMPILE THE PROGRAM
+
+
+		     
+		     module load gcc/7.2.0
+		     module load intel/17.0
+
+*****************************************************************************************
+Intel module is needed since on campus clusters --  Intel Math Kernel Library (MKL) contains the complete set of functions from the basic linear algebra subprograms (BLAS), the extended BLAS (sparse), and the complete set of LAPACK routines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
