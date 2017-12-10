@@ -81,7 +81,9 @@ The last command creates the armadillo copies/installs the armadillo headers/lib
 11. Execute
  	     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib/usr/lib64
 
-The above command will add the folder lib where you installed the armadillo library to the path of the compiler. HOWEVER THIS IS VALID FOR ONE SESSION ONLY. Step 12 expalains how to avoid this export commond everytime you log into the campus cluster.
+The above command will add the folder lib where you installed the armadillo library to the path of the compiler.
+HOWEVER THIS IS VALID FOR ONE SESSION ONLY. Step 12 expalains how to avoid this export commond everytime you log
+into the campus cluster.
 		
 12. Done !!!   Compile the initial.cpp with the following command.
 
@@ -109,7 +111,8 @@ TO BE ABLE TO RUN THE EXECUTABLE/COMPILE THE PROGRAM
 		     module load intel/17.0
 
 *****************************************************************************************
-Intel module is needed since on campus clusters --  Intel Math Kernel Library (MKL) contains the complete set of functions from the basic linear algebra subprograms (BLAS), the extended BLAS (sparse), and the complete set of LAPACK routines.
+Intel module is needed since on campus clusters --  Intel Math Kernel Library (MKL) contains the complete set of 
+functions from the basic linear algebra subprograms (BLAS), the extended BLAS (sparse), and the complete set of LAPACK routines.
 
 
 
