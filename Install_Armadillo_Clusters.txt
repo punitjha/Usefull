@@ -4,25 +4,67 @@
 How to install Armadillo on Bluewaters
 ****************************************************
 
-1. Go to the Git and download the Armadillo package, say into your Download folder.
+1. Go to the Git and download the Armadillo tar.xz, say into your Download folder.
+
+2. Open your terminal and go to the Download Folder --  
+   
+                  cd Download.
+
+3.  Copy the tar.xz file to your Bluewaters account scratch folder using the scp command. This is how I copied
+   
+                  scp -r armadillo-8.300.1.tar.xz jha1@bw.ncsa.illinois.edu:~/
+
+4. Now login to your Bluewaters account with your ID and password
+
+	          ssh jha1@bw.ncsa.illinois.edu
+
+5. Unpack the tar file from the terminal there using 
+
+		   tar -xf armadillo-8.300.1.tar.xz
+
+6. Please load the following modules that you will need
+
+		  module load gcc
+		  module load cmake/3.9.4
+		  module load cray-petsc
+
+7. Now 	cd armadillo-8.300.1.tar.xz
+
+8. Execute these commands in order:
+
+
+		cmake .    (Please notice the dot after cmake)
+		make
+		make install DESTDIR= ~/lib   
+
+The last command creates the armadillo copies/installs the armadillo headers/libraries in your home/  	lib directory.
 
 
 
+9.  Now come out of the folder  and go to the folder where you have the initial.cpp file.
+
+10. Execute 
+              module load intel/17.0.4.196
+              
+11. Execute
+ 	     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib/usr/lib64
+
+The above command will add the folder lib where you installed the armadillo library to the path of the compiler. HOWEVER THIS IS VALID FOR ONE SESSION ONLY. Step 12 expalains how to avoid this export commond everytime you log into the campus cluster.
+
+12. Done !!!   Compile the initial.cpp with the following command.
+
+      g++ initial.cpp -I ~/lib/usr/include -L ~/scratch/lib/usr/lib64/ -larmadillo
+
+ You can even run the executable now :   ./a.out
+
+13. Since we may want to compile the program everytime you log in add the following to your .bashrc file
 
 
+                        vim ~/.bashrc
 
+Go to the last line and add :  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib/usr/libs64
 
-
-
-
-
-
-
-
-
-
-
-
+Notice again that the last ~/lib/usr is the path to your folder where you installed armadillo
 
 
 
@@ -85,7 +127,7 @@ The above command will add the folder lib where you installed the armadillo libr
 		
 12. Done !!!   Compile the initial.cpp with the following command.
 
-      g++ initial.cpp -I ~/libs2/usr/include -L ~/libs2/usr/lib64/ -larmadillo
+      g++ initial.cpp -I ~/lib/usr/include -L ~/lib/usr/lib64/ -larmadillo
 
  You can even run the executable now :   ./a.out
 
