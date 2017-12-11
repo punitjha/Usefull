@@ -1,0 +1,30 @@
+
+
+***************************************************************
+Some Very useful linux commands
+****************************************************************
+
+history | grep g++
+
+This will show the history of the g++ command
+
+
+****************************************************************
+
+find /which/directory/you/want/to/search -name 'filename'
+
+
+
+The above command works specially on Clusters where locate command 
+does not work
+****************************************************************
+
+locate filename
+
+This command will locate a file where ever present
+
+****************************************************************
+
+locate filename
+
+This command will locate in sum specified directory where ever present
