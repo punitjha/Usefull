@@ -1,0 +1,61 @@
+***************************************************
+Steps that I used to install the GSL on my Desktop*
+***************************************************
+
+/The source of this file is http://www.cnblogs.com/emanlee/p/3318337.html
+
+
+1. First Download the GNU Scientific library from here (I used gsl-2.4)
+	ftp://ftp.gnu.org/gnu/gsl/
+
+2. Unpack the contents by:
+	tar -zxvf gsl-2.4.tar.gz
+
+3. Go to the folder that contains the tar file (The packages folder in my case)
+	cd gsl-2.4
+
+4. Create a directory where you want to install this packages. (For additional info see the notes on which is the best folder for doing this--Folder_Installation.txt)
+
+	sudo mkdir \usr\local\gsl
+Then provide the password 
+
+5. Now do 
+	./configure --prefix=/home/yourname/dev
+
+6.  Then
+
+	make
+
+7. Then 
+
+	make check
+
+8. Then 
+
+	make install
+
+
+9. Now we can write a test program to see if the library works. Create the following program and name it example.cpp
+
+	#include <stdio.h>
+	#include <gsl/gsl_sf_bessel.h>
+
+	int
+	main (void)
+	{
+	double x = 5.0;
+	double y = gsl_sf_bessel_J0 (x);
+	printf ("J0(%g) = %.18e/n", x, y);
+	return 0;
+	}
+
+10. Now Execute: (to learn more about this LD_LIBRARY_PATH see the file of the same name)
+
+ 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/the/folder/created/in/step/4
+
+11. To compile use:
+
+
+     g++ example.cpp -I /path/to/folder/above/include -L /path/to/folder/above/lib -lgsl -lgslcblas -lm
+
+12. Run the executable that was created -- ./a.out 
