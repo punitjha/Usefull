@@ -22,7 +22,7 @@ Then provide the password
 5. Now do 
 	./configure --prefix=/home/yourname/dev
 
-6.  Then
+6.  Then  (add sudo if using the \usr\local directory)
 
 	make
 
