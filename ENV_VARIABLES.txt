@@ -1,0 +1,274 @@
+***************************************************************
+*This file contains details of the environmental variable that*
+*need to set or assigned for using certain/installing certain *
+*software packages. It also contains some of my own personal  *
+*experiences while  these varibales.                   *
+***************************************************************
+
+
+Soureces: Wikipedia
+          https://www.digitalocean.com/community/tutorials/how-
+	  to-read-and-set-environmental-and-shell-variables-on-
+	  a-linux-vps
+
+Lets start from the begining:
+
+In computing -- a process in an instance of a computer program
+that is being executed. It contains the program code and its 
+current activity. A computer program is a passive collection 
+of instructions, while a process is the actual execution of th-
+ose instructions. Several processes may be associated with the 
+same program. 
+
+E.g. - Use the htop command to see the list of processes running.
+
+
+Depending on the operating system (OS), a process may be made up 
+of multiple threads of execution that execute instructions concu-
+rrently. Mutitasking is a method that allows multiple processes to
+share processors(CPU) and other system resources. Each CPU core 
+executes a single task at a time. However, multitasking allows each
+procesor to switch between tasks that are being executed. 
+
+------------------------------------------------------------------
+An environment varible is a dynamic - named value that can affe-
+ct the way running processes will behave on a computer. These 
+are the part of the environment in which a process runs. 
+
+E.g - A running variable can query the value of the TEMP envir-
+onment to discover a suitable loaction to store temprorary files.
+Or the HOME or USERPROFILE variable to find the directory struct-
+ure owned by the user running the process.
+
+In all Unix and Unix-like systems, each process has its own separate
+set of environment variables. By default, when a process is created, 
+it inherits a duplicate environment of its parent process, except for 
+explicit changes made by the parent when it creates the child.
+
+Shell scripts and bash files use environment varibles to comminicate
+date and preferences to child processes. In Unix, an environment va-
+riable that is changed in a script or compiled program will only aff-
+ect that process and possibly child processes. 
+
+
+******************************************************************
+The Shell variables context
+******************************************************************
+The environment is an area that the shell builds every time that 
+it starts a session that contains variables that define system pr-
+operties.
+
+Each shell session keeps track of its own shell and environmental 
+variables.
+
+******************************************************************
+Printing Shell and Environmet variables
+******************************************************************
+
+
+Each shell keeps track of its own shell and environment variables.
+We can access these in a few different ways.
+
+To print the list of environmental varibles use:
+
+env or printenv 
+
+The difference between the two commands is only apparent in their
+more specific functionality. For instance, with printenv, you can 
+requests the values of individual variables:
+
+printenv SHELL
+
+On the other hand, env let's you modify the environment that progr-
+ams run in by passing a set of variable definitions into a command
+like this:
+
+env VAR1="blahblah" command_to_run command_options
+
+HOW DO WE SET THE SHELL VARIABLES ?
+
+The set command can be used for this. 
+Simply type 
+
+set
+
+This displays a huge list. So use
+
+
+set | less
+
+
+******************************************************************
+Syntax
+******************************************************************
+The variables can be used both in scripts and on the command lines.
+They are referenced by putting special symbols in fromt of or arou-
+nd them.
+
+E.g - To display the user home directory - 
+       echo $HOME
+
+The commands env, set and printenv display all environment vari-
+ables and their values on different OS. 
+
+
+****************************************************************
+Assignments
+****************************************************************
+
+The commands env and set are also used to set environment vari-
+ables and their values on different OS.
+
+In Unix the following commands can also be used but are often
+dependent of a certain shell.
+
+export VARIABLE        # for Bourne and related shells
+export VARIABLE=value  # for ksh, bash, and related shells
+setenv VARIABLE value  # for csh and related shells
+
+
+****************************************************************
+unset command
+****************************************************************
+unset is a builtin command implemented by both the Bourne shell 
+family (sh, ksh, bash, etc.) and the C shell family (csh, tcsh, 
+etc.) of Unix command line shells. It unsets a shell variable, 
+removing it from memory and the shell's exported environment. 
+
+Read-only shell variables cannot be unset. If one tries to unset 
+a read-only variable, the unset command will print an error mes-
+sage and return a non-zero exit code.
+
+
+****************************************************************
+
+LIST OF COMMON ENVIRONMENTAL VARIABLES
+
+****************************************************************
+
+
+
+LD_LIBRARY_PATH
+I encontered this while using/intalling armadillo package on my 
+laptop/clusters. On many Unix systems with a dynamic linker, th-
+is contains a list of colon separated directries that the dynam-
+ic linker should search for shared objects when building a proc-
+ess image after "exec", before searching on any other directori-
+es.
+
+$LD_LIBRARY_PATH is consulted at the "time of execution" to provide
+a list of additional directories in which to serach for dynamica-
+lly linkable libraries. It is not consulted at link time.
+
+To set the LD_LIBRARY_PATH env variable use
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
+
+
+
+PATH
+a list of directory paths. When the user types a command without
+providing the full path, this list is checked to see whether it
+contains a path that leads to the command. 
+The list is column separated.
+
+
+
+HOME 
+indicates where a user's home directory is located on the file 
+system. 
+
+
+TEMP 
+location to store the temprorary files
+
+PWD
+The current working directory
+
+
+
+
+
+
+****************************************************************
+
+LIST OF COMMON SHELL  VARIABLES
+
+****************************************************************
+
+BASHOPTS
+The list of options that were used when bash was executed. This 
+is usefull for finding out if the shell environment will operate
+in the way we want to.
+
+
+COLUMNS
+The number of columns wide that are being used to draw output
+on the screen.
+
+
+BASH_VERSION
+The version of bash being executed, in human readable form.
+
+HISTSIZE
+Number of lines of command history allowed in memory.
+
+
+HISTFILESIZE
+Number of lines of command history stored to a file.
+
+
+SHELLOPTS
+Shell options that can be set with the set option
+
+
+UID
+The UID of the current user
+
+
+
+
+
+
+****************************************************************
+Setting Shell and Environmental Variables 
+****************************************************************
+
+To better understand the difference between shell and environm-
+ental variables, and to introduce the syntax for setting these 
+variables, lets  do a small demonstration.
+
+****************************************************************
+Creating Shell Variables
+****************************************************************
+
+Let us define a shell variable within our current session. 
+Adhering to the convention of keeping
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
