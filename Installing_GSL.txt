@@ -51,7 +51,7 @@ Then provide the password
 
 10. Now Execute: (to learn more about this LD_LIBRARY_PATH see the file of the same name)
 
- 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/the/folder/created/in/step/4
+ 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/the/folder/created/in/step/4/gsl/lib
 
 11. To compile use:
 
