@@ -1,0 +1,60 @@
+******************************************************************************
+This file describes the basics of using cscope and ctags 
+******************************************************************************
+
+The source is : https://courses.cs.washington.edu/courses/cse451/12sp/tutorials
+		/tutorial_cscope.html
+
+**************
+Using cscope
+*************
+
+
+
+
+1. First set the editor that Cscope will open your search results in. 
+	The default editor is vi; if you want to change it to something else, 
+	set the CSCOPE_EDITOR environment variable, e.g.:
+
+	export CSCOPE_EDITOR=`which emacs`
+
+2. go to the folder you want to use cscope on: cd /path/to/the/file
+
+
+3. The following command will recursively find all of the .c, .cpp, .h, and .hpp 
+files in your current directory and any subdirectories, and store the list of these 
+filenames in cscope.files:
+
+	find . -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" > cscope.files
+
+4. Pass the list of source files to cscope, which will build a reference database.
+
+	cscope -q -R -b -i cscope.files
+
+5. Start csope using :
+
+	csope -d
+
+
+6. To exit scope use:
+
+	^d
+
+7. To navigate use the arrow keys. To find something new use:
+
+	^f
+
+**************
+Using ctags
+*************
+
+1. Go to the directroy you want to use ctags on. (Make sure Exuberant ctags is
+	intalled in the system. See after installing Mint )
+
+2. Run :
+	ctags -R .
+
+3. go to the definition or funtion name that you want to look up and use:
+
+	^]
+
