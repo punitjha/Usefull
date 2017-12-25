@@ -55,3 +55,4 @@ Things to do when you install a new Linux Mint
 
 15. Install – MPI for parallel programming
 
+16. Install  Exuberant Ctags for vim -- sudo apt-get install exuberant-ctags.
