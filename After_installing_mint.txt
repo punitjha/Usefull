@@ -62,6 +62,8 @@ Things to do when you install a new Linux Mint
 
 15. Install – MPI for parallel programming
 
-16. Install  Exuberant Ctags for vim -- sudo apt-get install exuberant-ctags.
+16. Install  Exuberant Ctags for vim -- sudo apt-get install exuberant-ctags
 
-17. Set up the configuration files for use in accessing supercomputers/clusters.
+17. Install  cscope  for vim -- sudo apt-get install cscope
+
+18. Set up the configuration files for use in accessing supercomputers/clusters.
