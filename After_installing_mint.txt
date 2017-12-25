@@ -9,8 +9,15 @@ Things to do when you install a new Linux Mint
 
 3. Changing the bashrc file for alaises – 
 
-   alias ll='ls -a'
-   alias gellmann='ssh punit2@gellmann.scs.uiuc.edu'
+	alias ll='ls -a'
+	# added by psi4conda installer
+	export PATH="/home/mintuser/psi4conda/bin:$PATH"
+	export PSI_SCRATCH=/home/mintuser/scratch
+	alias campus='ssh -YC punit2@cc-login.campuscluster.illinois.edu'
+	alias fci='cd ~/Desktop/Project/git_codes/String_FCI'
+	alias usefull='cd ~/Desktop/Project/git_codes/Usefull'
+	alias push='git push origin master'
+	alias pull='git pull origin master'
 
 4. Installing fortran and g++ compilers:
 
@@ -56,3 +63,5 @@ Things to do when you install a new Linux Mint
 15. Install – MPI for parallel programming
 
 16. Install  Exuberant Ctags for vim -- sudo apt-get install exuberant-ctags.
+
+17. Set up the configuration files for use in accessing supercomputers/clusters.
