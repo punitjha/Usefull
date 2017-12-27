@@ -1,0 +1,35 @@
+*************************************************************
+This is the guide to step by step installation guide of the 
+Armadillo package on the home directory.
+*************************************************************
+
+The source: Installing Armadillo0FYS4411-Spring 2013- 
+	    University of Oslo
+
+************************************************************
+For Ubuntu Users
+************************************************************
+
+1. Install Lapack, Boost  and Blas with
+
+	sudo apt-get install liblapack-dev
+	sudo apt-get install libblas-dev
+	sudo apt-get install libboost-dev
+
+2. Now installing the Armadillo package
+
+	sudo apt-get install libarmadillo-dev
+
+
+************************************************************
+Manual Installation on the computer
+************************************************************
+
+1. Download Armadillo from http://arma.sourceforge.net/download.html
+
+2. Extract it into some directory.
+
+3. Open the terminal and cd to that directory
+
+4. Follow the manual for the cluster installation.
+
