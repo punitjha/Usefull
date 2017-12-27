@@ -1,0 +1,23 @@
+Host bwbay
+	Hostname bwbay.ncsa.illinois.edu
+        User tra400
+        ForwardX11 yes
+        ForwardX11Trusted yes
+
+Host bw
+       Hostname bw.ncsa.illinois.edu
+       User jha1
+       ForwardX11 yes
+       ForwardX11Trusted yes
+
+Host campus
+	Hostname cc-login.campuscluster.illinois.edu
+	User punit2
+	ForwardX11 yes
+	ForwardX11Trusted yes
+
+Host gellmann
+	Hostname gellmann.scs.uiuc.edu
+	User punit2
+	ForwardX11 yes
+	ForwardX11Trusted yes
