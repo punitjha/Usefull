@@ -2,6 +2,26 @@
 These are the Notes from the Bluewaters Workshop
 *************************************************************
 
+Some usefull commands:
+
+pwd - print working directory
+
+who -
+
+finge -
+
+xeyes -
+
+cat - to see the contents of a file on the terminal
+
+
+List of Groups
+
+id -nG
+
+whoami
+
+id -nu
 
 
 
@@ -24,6 +44,11 @@ These are the Notes from the Bluewaters Workshop
 *************************************************************
 Using Configuration Files for SSH
 *************************************************************
+
+Usually we sign in with 
+
+	ssh -l username@bw.ncsa.illinois.edu
+
 
 
 
