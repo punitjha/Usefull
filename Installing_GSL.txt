@@ -16,7 +16,7 @@ Steps that I used to install the GSL on my Desktop*
 
 4. Create a directory where you want to install this packages. (For additional info see the notes on which is the best folder for doing this--Folder_Installation.txt)
 
-	sudo mkdir \usr\local\gsl
+	sudo mkdir \usr\local\gsl -- this is where I installed it.
 Then provide the password 
 
 5. Now do 
